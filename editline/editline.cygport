@@ -1,0 +1,12 @@
+NAME="editline"
+VERSION=1.17.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="editline"
+DESCRIPTION="editline"
+
+GIT_URI="https://github.com/troglobit/editline.git"
+GIT_TAG="${VERSION}"
+inherit git
+
+PATCH_URI="1.17.1-no-undefined.patch"

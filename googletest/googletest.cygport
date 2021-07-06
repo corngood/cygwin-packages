@@ -1,0 +1,12 @@
+NAME="googletest"
+VERSION=1.11.0
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="googletest"
+DESCRIPTION="googletest"
+
+GIT_URI="https://github.com/google/googletest.git"
+GIT_TAG="release-${VERSION}"
+inherit git
+
+inherit cmake

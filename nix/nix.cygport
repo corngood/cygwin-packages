@@ -1,0 +1,28 @@
+NAME="nix"
+VERSION=2.4
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="nix"
+DESCRIPTION="nix"
+
+GIT_URI="https://github.com/corngood/nix.git"
+GIT_REV="5aadbd6c1d4c45a3dc652459c15fd6f1dde6b854"
+inherit git
+
+DEPEND="cygport jq pkg-config libboost-devel libssl-devel libarchive-devel libsqlite3-devel libcurl-devel editline libsodium-devel googletest nlohmann-json zlib-devel bison flex libbz2-devel"
+
+CYGCONF_ARGS="--disable-gc"
+
+src_compile() {
+  # nix doesn't support out-of-tree build :(
+  cd ${S}
+  cygautoreconf
+  cygconf
+  cygmake
+}
+
+src_install() {
+  # nix doesn't support out-of-tree build :(
+  cd ${S}
+  cyginstall
+}

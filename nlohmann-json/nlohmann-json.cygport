@@ -1,0 +1,15 @@
+NAME="nlohmann-json"
+VERSION=3.9.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="json library for C++"
+DESCRIPTION="json library for C++"
+
+GIT_URI="https://github.com/nlohmann/json.git"
+GIT_TAG="v${VERSION}"
+inherit git
+
+DEPEND="cygport"
+
+CYGCMAKE_ARGS="-DJSON_MultipleHeaders=ON"
+inherit cmake
