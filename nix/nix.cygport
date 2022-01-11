@@ -1,17 +1,20 @@
 NAME="nix"
-VERSION=2.4
+VERSION=2.6
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="nix"
 DESCRIPTION="nix"
 
 GIT_URI="https://github.com/corngood/nix.git"
-GIT_REV="2f2471061ef104bea1f423f11703e3cc8cde79a6"
+GIT_REV="fe7b9caff3378af97ffa8162171cdc867b044d14"
 inherit git
 
 DEPEND="cygport jq pkg-config libboost-devel libssl-devel libarchive-devel libsqlite3-devel libcurl-devel editline libsodium-devel googletest nlohmann-json zlib-devel bison flex libbz2-devel libbrotli-devel"
 
-CYGCONF_ARGS="--disable-gc"
+// TODO: make package to install native stdenv?
+// DEPEND="curl gcc-core make"
+
+CYGCONF_ARGS="--disable-gc --disable-cpuid --localstatedir=/nix/var"
 
 src_compile() {
   # nix doesn't support out-of-tree build :(
