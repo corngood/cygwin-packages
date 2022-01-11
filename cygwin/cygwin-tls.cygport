@@ -59,6 +59,10 @@ CYGCONF_ARGS="--docdir=/usr/share/doc/cygwin-doc
 	      --htmldir=\${docdir}/html"
 
 src_compile() {
+  # when building from git
+  cd ${S}/winsup
+  ./autogen.sh
+
   cd ${B}
   # cygport compiles with _FORTIFY_SOURCE=2 -fstack-protector by default.
   # This doesn't work for the lib itself
